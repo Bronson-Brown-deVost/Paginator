@@ -1,4 +1,4 @@
 Paginator
 =========
 
-A program to process scanned pages using QR Codes.
+An open sourced program to process scanned pages by reading QR Codes using ZXingObjC and openCV.
