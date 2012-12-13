@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E30980E7143F977000FAB788 /* Paginator.icns in Resources */ = {isa = PBXBuildFile; fileRef = E30980E6143F977000FAB788 /* Paginator.icns */; };
+		E3359D721673C1B900334177 /* CodeLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = E3359D6B1673C1B900334177 /* CodeLocator.m */; };
+		E3359D731673C1B900334177 /* ImageFileProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3359D6D1673C1B900334177 /* ImageFileProcessor.mm */; };
+		E3359D741673C1B900334177 /* ImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E3359D6F1673C1B900334177 /* ImageProcessor.m */; };
+		E3359D751673C1B900334177 /* SplitImageArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E3359D711673C1B900334177 /* SplitImageArray.m */; };
+		E3359E46167451C000334177 /* CodeLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = E3359D6B1673C1B900334177 /* CodeLocator.m */; };
+		E3359E47167451C500334177 /* ImageFileProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3359D6D1673C1B900334177 /* ImageFileProcessor.mm */; };
+		E3359E48167451C900334177 /* ImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E3359D6F1673C1B900334177 /* ImageProcessor.m */; };
+		E3359E49167451CD00334177 /* SplitImageArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E3359D711673C1B900334177 /* SplitImageArray.m */; };
+		E3640697167965E700A10D35 /* libopencv_highgui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640685167965E700A10D35 /* libopencv_highgui.a */; };
+		E3640698167965E700A10D35 /* libopencv_haartraining_engine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640686167965E700A10D35 /* libopencv_haartraining_engine.a */; };
+		E3640699167965E700A10D35 /* libopencv_videostab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640687167965E700A10D35 /* libopencv_videostab.a */; };
+		E364069A167965E700A10D35 /* libopencv_stitching.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640688167965E700A10D35 /* libopencv_stitching.a */; };
+		E364069B167965E700A10D35 /* libopencv_gpu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640689167965E700A10D35 /* libopencv_gpu.a */; };
+		E364069C167965E700A10D35 /* libopencv_legacy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E364068A167965E700A10D35 /* libopencv_legacy.a */; };
+		E364069D167965E700A10D35 /* libopencv_photo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E364068B167965E700A10D35 /* libopencv_photo.a */; };
+		E364069E167965E700A10D35 /* libopencv_nonfree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E364068C167965E700A10D35 /* libopencv_nonfree.a */; };
+		E364069F167965E700A10D35 /* libopencv_contrib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E364068D167965E700A10D35 /* libopencv_contrib.a */; };
+		E36406A0167965E700A10D35 /* libopencv_objdetect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E364068E167965E700A10D35 /* libopencv_objdetect.a */; };
+		E36406A1167965E700A10D35 /* libopencv_video.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E364068F167965E700A10D35 /* libopencv_video.a */; };
+		E36406A2167965E700A10D35 /* libopencv_ml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640690167965E700A10D35 /* libopencv_ml.a */; };
+		E36406A3167965E700A10D35 /* libopencv_calib3d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640691167965E700A10D35 /* libopencv_calib3d.a */; };
+		E36406A4167965E700A10D35 /* libopencv_ts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640692167965E700A10D35 /* libopencv_ts.a */; };
+		E36406A5167965E700A10D35 /* libopencv_features2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640693167965E700A10D35 /* libopencv_features2d.a */; };
+		E36406A6167965E700A10D35 /* libopencv_flann.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640694167965E700A10D35 /* libopencv_flann.a */; };
+		E36406A7167965E700A10D35 /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640695167965E700A10D35 /* libopencv_imgproc.a */; };
+		E36406A8167965E700A10D35 /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3640696167965E700A10D35 /* libopencv_core.a */; };
+		E36406AF167965F900A10D35 /* liblibtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36406A9167965F900A10D35 /* liblibtiff.a */; };
+		E36406B0167965F900A10D35 /* libIlmImf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36406AA167965F900A10D35 /* libIlmImf.a */; };
+		E36406B1167965F900A10D35 /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36406AB167965F900A10D35 /* liblibpng.a */; };
+		E36406B2167965F900A10D35 /* liblibjasper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36406AC167965F900A10D35 /* liblibjasper.a */; };
+		E36406B3167965F900A10D35 /* liblibjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36406AD167965F900A10D35 /* liblibjpeg.a */; };
+		E36406B4167965F900A10D35 /* libzlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36406AE167965F900A10D35 /* libzlib.a */; };
+		E36406B61679663400A10D35 /* libZXingObjC-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E36406B51679663400A10D35 /* libZXingObjC-osx.a */; };
+		E36406DA1679988D00A10D35 /* ZXingObjC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E36406D91679988D00A10D35 /* ZXingObjC.framework */; };
+		E366AFF71436DAF100AEB870 /* MyImageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E366AFF61436DAF100AEB870 /* MyImageObject.m */; };
+		E3AA40C31436637700EADF06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA40C21436637700EADF06 /* Cocoa.framework */; };
+		E3AA40CD1436637700EADF06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3AA40CB1436637700EADF06 /* InfoPlist.strings */; };
+		E3AA40CF1436637700EADF06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AA40CE1436637700EADF06 /* main.m */; };
+		E3AA40D31436637700EADF06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E3AA40D11436637700EADF06 /* Credits.rtf */; };
+		E3AA40D61436637700EADF06 /* Browse_ImagesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AA40D51436637700EADF06 /* Browse_ImagesAppDelegate.m */; };
+		E3AA40D91436637700EADF06 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3AA40D71436637700EADF06 /* MainMenu.xib */; };
+		E3AA40DC1436637700EADF06 /* Browse_Images.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3AA40DA1436637700EADF06 /* Browse_Images.xcdatamodeld */; };
+		E3AA40E41436637700EADF06 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA40E31436637700EADF06 /* SenTestingKit.framework */; };
+		E3AA40E51436637700EADF06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA40C21436637700EADF06 /* Cocoa.framework */; };
+		E3AA40ED1436637700EADF06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3AA40EB1436637700EADF06 /* InfoPlist.strings */; };
+		E3AA40EF1436637700EADF06 /* Browse_ImagesTests.h in Resources */ = {isa = PBXBuildFile; fileRef = E3AA40EE1436637700EADF06 /* Browse_ImagesTests.h */; };
+		E3AA40F11436637700EADF06 /* Browse_ImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AA40F01436637700EADF06 /* Browse_ImagesTests.m */; };
+		E3AA40FE143666AA00EADF06 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA40FC143666AA00EADF06 /* Quartz.framework */; };
+		E3AA40FF143666AA00EADF06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA40FD143666AA00EADF06 /* QuartzCore.framework */; };
+		E3AA41021436685000EADF06 /* ImageBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AA41011436685000EADF06 /* ImageBrowserController.m */; };
+		E3AA41051436CD5E00EADF06 /* ImageBrowseController2.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AA41041436CD5E00EADF06 /* ImageBrowseController2.m */; };
+		E3AA41081436D24200EADF06 /* OpenFileDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AA41071436D24200EADF06 /* OpenFileDialog.m */; };
+		E3C9E87C14414CB90063EB1C /* ProcessOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C9E87B14414CB90063EB1C /* ProcessOptions.m */; };
+		E3F86EB0167825010049413B /* QR Calibration Codes.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F86EAF167825010049413B /* QR Calibration Codes.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3AA40E61436637700EADF06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3AA40B51436637600EADF06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3AA40BD1436637700EADF06;
+			remoteInfo = "Browse Images";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E3640573167928CE00A10D35 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E36406DA1679988D00A10D35 /* ZXingObjC.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E30980E6143F977000FAB788 /* Paginator.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Paginator.icns; sourceTree = "<group>"; };
+		E3359D6A1673C1B900334177 /* CodeLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeLocator.h; sourceTree = "<group>"; };
+		E3359D6B1673C1B900334177 /* CodeLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeLocator.m; sourceTree = "<group>"; };
+		E3359D6C1673C1B900334177 /* ImageFileProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFileProcessor.h; sourceTree = "<group>"; };
+		E3359D6D1673C1B900334177 /* ImageFileProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageFileProcessor.mm; sourceTree = "<group>"; };
+		E3359D6E1673C1B900334177 /* ImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessor.h; sourceTree = "<group>"; };
+		E3359D6F1673C1B900334177 /* ImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageProcessor.m; sourceTree = "<group>"; };
+		E3359D701673C1B900334177 /* SplitImageArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitImageArray.h; sourceTree = "<group>"; };
+		E3359D711673C1B900334177 /* SplitImageArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitImageArray.m; sourceTree = "<group>"; };
+		E3640685167965E700A10D35 /* libopencv_highgui.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_highgui.a; sourceTree = "<group>"; };
+		E3640686167965E700A10D35 /* libopencv_haartraining_engine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_haartraining_engine.a; sourceTree = "<group>"; };
+		E3640687167965E700A10D35 /* libopencv_videostab.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_videostab.a; sourceTree = "<group>"; };
+		E3640688167965E700A10D35 /* libopencv_stitching.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_stitching.a; sourceTree = "<group>"; };
+		E3640689167965E700A10D35 /* libopencv_gpu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_gpu.a; sourceTree = "<group>"; };
+		E364068A167965E700A10D35 /* libopencv_legacy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_legacy.a; sourceTree = "<group>"; };
+		E364068B167965E700A10D35 /* libopencv_photo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_photo.a; sourceTree = "<group>"; };
+		E364068C167965E700A10D35 /* libopencv_nonfree.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_nonfree.a; sourceTree = "<group>"; };
+		E364068D167965E700A10D35 /* libopencv_contrib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_contrib.a; sourceTree = "<group>"; };
+		E364068E167965E700A10D35 /* libopencv_objdetect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_objdetect.a; sourceTree = "<group>"; };
+		E364068F167965E700A10D35 /* libopencv_video.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_video.a; sourceTree = "<group>"; };
+		E3640690167965E700A10D35 /* libopencv_ml.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_ml.a; sourceTree = "<group>"; };
+		E3640691167965E700A10D35 /* libopencv_calib3d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_calib3d.a; sourceTree = "<group>"; };
+		E3640692167965E700A10D35 /* libopencv_ts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_ts.a; sourceTree = "<group>"; };
+		E3640693167965E700A10D35 /* libopencv_features2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_features2d.a; sourceTree = "<group>"; };
+		E3640694167965E700A10D35 /* libopencv_flann.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_flann.a; sourceTree = "<group>"; };
+		E3640695167965E700A10D35 /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_imgproc.a; sourceTree = "<group>"; };
+		E3640696167965E700A10D35 /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_core.a; sourceTree = "<group>"; };
+		E36406A9167965F900A10D35 /* liblibtiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibtiff.a; sourceTree = "<group>"; };
+		E36406AA167965F900A10D35 /* libIlmImf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libIlmImf.a; sourceTree = "<group>"; };
+		E36406AB167965F900A10D35 /* liblibpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibpng.a; sourceTree = "<group>"; };
+		E36406AC167965F900A10D35 /* liblibjasper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibjasper.a; sourceTree = "<group>"; };
+		E36406AD167965F900A10D35 /* liblibjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibjpeg.a; sourceTree = "<group>"; };
+		E36406AE167965F900A10D35 /* libzlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzlib.a; sourceTree = "<group>"; };
+		E36406B51679663400A10D35 /* libZXingObjC-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libZXingObjC-osx.a"; sourceTree = "<group>"; };
+		E36406D91679988D00A10D35 /* ZXingObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZXingObjC.framework; sourceTree = "<group>"; };
+		E366AFF51436DAF100AEB870 /* MyImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageObject.h; sourceTree = "<group>"; };
+		E366AFF61436DAF100AEB870 /* MyImageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageObject.m; sourceTree = "<group>"; };
+		E3AA40BE1436637700EADF06 /* Paginator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paginator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3AA40C21436637700EADF06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E3AA40C51436637700EADF06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E3AA40C61436637700EADF06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E3AA40C71436637700EADF06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E3AA40CA1436637700EADF06 /* Paginator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Paginator-Info.plist"; sourceTree = "<group>"; };
+		E3AA40CC1436637700EADF06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E3AA40CE1436637700EADF06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3AA40D01436637700EADF06 /* Paginator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Paginator-Prefix.pch"; sourceTree = "<group>"; };
+		E3AA40D21436637700EADF06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E3AA40D41436637700EADF06 /* Browse_ImagesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Browse_ImagesAppDelegate.h; sourceTree = "<group>"; };
+		E3AA40D51436637700EADF06 /* Browse_ImagesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Browse_ImagesAppDelegate.m; sourceTree = "<group>"; };
+		E3AA40D81436637700EADF06 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E3AA40DB1436637700EADF06 /* Browse_Images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Browse_Images.xcdatamodel; sourceTree = "<group>"; };
+		E3AA40E21436637700EADF06 /* PaginatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaginatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3AA40E31436637700EADF06 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E3AA40EA1436637700EADF06 /* PaginatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PaginatorTests-Info.plist"; sourceTree = "<group>"; };
+		E3AA40EC1436637700EADF06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E3AA40EE1436637700EADF06 /* Browse_ImagesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Browse_ImagesTests.h; sourceTree = "<group>"; };
+		E3AA40F01436637700EADF06 /* Browse_ImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Browse_ImagesTests.m; sourceTree = "<group>"; };
+		E3AA40FC143666AA00EADF06 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		E3AA40FD143666AA00EADF06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E3AA41001436685000EADF06 /* ImageBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBrowserController.h; sourceTree = "<group>"; };
+		E3AA41011436685000EADF06 /* ImageBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBrowserController.m; sourceTree = "<group>"; };
+		E3AA41031436CD5E00EADF06 /* ImageBrowseController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBrowseController2.h; sourceTree = "<group>"; };
+		E3AA41041436CD5E00EADF06 /* ImageBrowseController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBrowseController2.m; sourceTree = "<group>"; };
+		E3AA41061436D24200EADF06 /* OpenFileDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenFileDialog.h; sourceTree = "<group>"; };
+		E3AA41071436D24200EADF06 /* OpenFileDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenFileDialog.m; sourceTree = "<group>"; };
+		E3C9E87A14414CB90063EB1C /* ProcessOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessOptions.h; sourceTree = "<group>"; };
+		E3C9E87B14414CB90063EB1C /* ProcessOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessOptions.m; sourceTree = "<group>"; };
+		E3F86EAF167825010049413B /* QR Calibration Codes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QR Calibration Codes.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3AA40BB1436637700EADF06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AA40FE143666AA00EADF06 /* Quartz.framework in Frameworks */,
+				E3AA40FF143666AA00EADF06 /* QuartzCore.framework in Frameworks */,
+				E3AA40C31436637700EADF06 /* Cocoa.framework in Frameworks */,
+				E3640697167965E700A10D35 /* libopencv_highgui.a in Frameworks */,
+				E3640698167965E700A10D35 /* libopencv_haartraining_engine.a in Frameworks */,
+				E3640699167965E700A10D35 /* libopencv_videostab.a in Frameworks */,
+				E364069A167965E700A10D35 /* libopencv_stitching.a in Frameworks */,
+				E364069B167965E700A10D35 /* libopencv_gpu.a in Frameworks */,
+				E364069C167965E700A10D35 /* libopencv_legacy.a in Frameworks */,
+				E364069D167965E700A10D35 /* libopencv_photo.a in Frameworks */,
+				E364069E167965E700A10D35 /* libopencv_nonfree.a in Frameworks */,
+				E364069F167965E700A10D35 /* libopencv_contrib.a in Frameworks */,
+				E36406A0167965E700A10D35 /* libopencv_objdetect.a in Frameworks */,
+				E36406A1167965E700A10D35 /* libopencv_video.a in Frameworks */,
+				E36406A2167965E700A10D35 /* libopencv_ml.a in Frameworks */,
+				E36406A3167965E700A10D35 /* libopencv_calib3d.a in Frameworks */,
+				E36406A4167965E700A10D35 /* libopencv_ts.a in Frameworks */,
+				E36406A5167965E700A10D35 /* libopencv_features2d.a in Frameworks */,
+				E36406A6167965E700A10D35 /* libopencv_flann.a in Frameworks */,
+				E36406A7167965E700A10D35 /* libopencv_imgproc.a in Frameworks */,
+				E36406A8167965E700A10D35 /* libopencv_core.a in Frameworks */,
+				E36406AF167965F900A10D35 /* liblibtiff.a in Frameworks */,
+				E36406B0167965F900A10D35 /* libIlmImf.a in Frameworks */,
+				E36406B1167965F900A10D35 /* liblibpng.a in Frameworks */,
+				E36406B2167965F900A10D35 /* liblibjasper.a in Frameworks */,
+				E36406B3167965F900A10D35 /* liblibjpeg.a in Frameworks */,
+				E36406B4167965F900A10D35 /* libzlib.a in Frameworks */,
+				E36406B61679663400A10D35 /* libZXingObjC-osx.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3AA40DE1436637700EADF06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AA40E41436637700EADF06 /* SenTestingKit.framework in Frameworks */,
+				E3AA40E51436637700EADF06 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3359D691673C19E00334177 /* QRCodeRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				E3359D6A1673C1B900334177 /* CodeLocator.h */,
+				E3359D6B1673C1B900334177 /* CodeLocator.m */,
+				E3359D6C1673C1B900334177 /* ImageFileProcessor.h */,
+				E3359D6D1673C1B900334177 /* ImageFileProcessor.mm */,
+				E3359D6E1673C1B900334177 /* ImageProcessor.h */,
+				E3359D6F1673C1B900334177 /* ImageProcessor.m */,
+				E3359D701673C1B900334177 /* SplitImageArray.h */,
+				E3359D711673C1B900334177 /* SplitImageArray.m */,
+			);
+			name = QRCodeRecognition;
+			sourceTree = "<group>";
+		};
+		E3AA40B31436637600EADF06 = {
+			isa = PBXGroup;
+			children = (
+				E36406D91679988D00A10D35 /* ZXingObjC.framework */,
+				E3359D691673C19E00334177 /* QRCodeRecognition */,
+				E30980E6143F977000FAB788 /* Paginator.icns */,
+				E3F86EAF167825010049413B /* QR Calibration Codes.png */,
+				E3AA41001436685000EADF06 /* ImageBrowserController.h */,
+				E3AA41011436685000EADF06 /* ImageBrowserController.m */,
+				E366AFF51436DAF100AEB870 /* MyImageObject.h */,
+				E366AFF61436DAF100AEB870 /* MyImageObject.m */,
+				E3AA41031436CD5E00EADF06 /* ImageBrowseController2.h */,
+				E3AA41041436CD5E00EADF06 /* ImageBrowseController2.m */,
+				E3C9E87A14414CB90063EB1C /* ProcessOptions.h */,
+				E3C9E87B14414CB90063EB1C /* ProcessOptions.m */,
+				E3AA41061436D24200EADF06 /* OpenFileDialog.h */,
+				E3AA41071436D24200EADF06 /* OpenFileDialog.m */,
+				E3AA40C81436637700EADF06 /* Browse Images */,
+				E3AA40E81436637700EADF06 /* Browse ImagesTests */,
+				E3AA40C11436637700EADF06 /* Frameworks */,
+				E3AA40BF1436637700EADF06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3AA40BF1436637700EADF06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3AA40BE1436637700EADF06 /* Paginator.app */,
+				E3AA40E21436637700EADF06 /* PaginatorTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3AA40C11436637700EADF06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E36406B51679663400A10D35 /* libZXingObjC-osx.a */,
+				E36406A9167965F900A10D35 /* liblibtiff.a */,
+				E36406AA167965F900A10D35 /* libIlmImf.a */,
+				E36406AB167965F900A10D35 /* liblibpng.a */,
+				E36406AC167965F900A10D35 /* liblibjasper.a */,
+				E36406AD167965F900A10D35 /* liblibjpeg.a */,
+				E36406AE167965F900A10D35 /* libzlib.a */,
+				E3640685167965E700A10D35 /* libopencv_highgui.a */,
+				E3640686167965E700A10D35 /* libopencv_haartraining_engine.a */,
+				E3640687167965E700A10D35 /* libopencv_videostab.a */,
+				E3640688167965E700A10D35 /* libopencv_stitching.a */,
+				E3640689167965E700A10D35 /* libopencv_gpu.a */,
+				E364068A167965E700A10D35 /* libopencv_legacy.a */,
+				E364068B167965E700A10D35 /* libopencv_photo.a */,
+				E364068C167965E700A10D35 /* libopencv_nonfree.a */,
+				E364068D167965E700A10D35 /* libopencv_contrib.a */,
+				E364068E167965E700A10D35 /* libopencv_objdetect.a */,
+				E364068F167965E700A10D35 /* libopencv_video.a */,
+				E3640690167965E700A10D35 /* libopencv_ml.a */,
+				E3640691167965E700A10D35 /* libopencv_calib3d.a */,
+				E3640692167965E700A10D35 /* libopencv_ts.a */,
+				E3640693167965E700A10D35 /* libopencv_features2d.a */,
+				E3640694167965E700A10D35 /* libopencv_flann.a */,
+				E3640695167965E700A10D35 /* libopencv_imgproc.a */,
+				E3640696167965E700A10D35 /* libopencv_core.a */,
+				E3AA40FC143666AA00EADF06 /* Quartz.framework */,
+				E3AA40FD143666AA00EADF06 /* QuartzCore.framework */,
+				E3AA40C21436637700EADF06 /* Cocoa.framework */,
+				E3AA40E31436637700EADF06 /* SenTestingKit.framework */,
+				E3AA40C41436637700EADF06 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3AA40C41436637700EADF06 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3AA40C51436637700EADF06 /* AppKit.framework */,
+				E3AA40C61436637700EADF06 /* CoreData.framework */,
+				E3AA40C71436637700EADF06 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E3AA40C81436637700EADF06 /* Browse Images */ = {
+			isa = PBXGroup;
+			children = (
+				E3AA40D71436637700EADF06 /* MainMenu.xib */,
+				E3AA40D41436637700EADF06 /* Browse_ImagesAppDelegate.h */,
+				E3AA40D51436637700EADF06 /* Browse_ImagesAppDelegate.m */,
+				E3AA40DA1436637700EADF06 /* Browse_Images.xcdatamodeld */,
+				E3AA40C91436637700EADF06 /* Supporting Files */,
+			);
+			path = "Browse Images";
+			sourceTree = "<group>";
+		};
+		E3AA40C91436637700EADF06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3AA40CA1436637700EADF06 /* Paginator-Info.plist */,
+				E3AA40CB1436637700EADF06 /* InfoPlist.strings */,
+				E3AA40CE1436637700EADF06 /* main.m */,
+				E3AA40D01436637700EADF06 /* Paginator-Prefix.pch */,
+				E3AA40D11436637700EADF06 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3AA40E81436637700EADF06 /* Browse ImagesTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3AA40EE1436637700EADF06 /* Browse_ImagesTests.h */,
+				E3AA40F01436637700EADF06 /* Browse_ImagesTests.m */,
+				E3AA40E91436637700EADF06 /* Supporting Files */,
+			);
+			path = "Browse ImagesTests";
+			sourceTree = "<group>";
+		};
+		E3AA40E91436637700EADF06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3AA40EA1436637700EADF06 /* PaginatorTests-Info.plist */,
+				E3AA40EB1436637700EADF06 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3AA40BD1436637700EADF06 /* Paginator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3AA40F41436637700EADF06 /* Build configuration list for PBXNativeTarget "Paginator" */;
+			buildPhases = (
+				E3AA40BA1436637700EADF06 /* Sources */,
+				E3AA40BB1436637700EADF06 /* Frameworks */,
+				E3AA40BC1436637700EADF06 /* Resources */,
+				E3640573167928CE00A10D35 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Paginator;
+			productName = "Browse Images";
+			productReference = E3AA40BE1436637700EADF06 /* Paginator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3AA40E11436637700EADF06 /* PaginatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3AA40F71436637700EADF06 /* Build configuration list for PBXNativeTarget "PaginatorTests" */;
+			buildPhases = (
+				E3AA40DD1436637700EADF06 /* Sources */,
+				E3AA40DE1436637700EADF06 /* Frameworks */,
+				E3AA40DF1436637700EADF06 /* Resources */,
+				E3AA40E01436637700EADF06 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3AA40E71436637700EADF06 /* PBXTargetDependency */,
+			);
+			name = PaginatorTests;
+			productName = "Browse ImagesTests";
+			productReference = E3AA40E21436637700EADF06 /* PaginatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3AA40B51436637600EADF06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = E3AA40B81436637600EADF06 /* Build configuration list for PBXProject "Paginator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E3AA40B31436637600EADF06;
+			productRefGroup = E3AA40BF1436637700EADF06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3AA40BD1436637700EADF06 /* Paginator */,
+				E3AA40E11436637700EADF06 /* PaginatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3AA40BC1436637700EADF06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AA40CD1436637700EADF06 /* InfoPlist.strings in Resources */,
+				E3AA40D31436637700EADF06 /* Credits.rtf in Resources */,
+				E3AA40D91436637700EADF06 /* MainMenu.xib in Resources */,
+				E30980E7143F977000FAB788 /* Paginator.icns in Resources */,
+				E3F86EB0167825010049413B /* QR Calibration Codes.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3AA40DF1436637700EADF06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AA40ED1436637700EADF06 /* InfoPlist.strings in Resources */,
+				E3AA40EF1436637700EADF06 /* Browse_ImagesTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E3AA40E01436637700EADF06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3AA40BA1436637700EADF06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AA40CF1436637700EADF06 /* main.m in Sources */,
+				E3AA40D61436637700EADF06 /* Browse_ImagesAppDelegate.m in Sources */,
+				E3AA40DC1436637700EADF06 /* Browse_Images.xcdatamodeld in Sources */,
+				E3AA41021436685000EADF06 /* ImageBrowserController.m in Sources */,
+				E3AA41051436CD5E00EADF06 /* ImageBrowseController2.m in Sources */,
+				E3AA41081436D24200EADF06 /* OpenFileDialog.m in Sources */,
+				E366AFF71436DAF100AEB870 /* MyImageObject.m in Sources */,
+				E3C9E87C14414CB90063EB1C /* ProcessOptions.m in Sources */,
+				E3359E46167451C000334177 /* CodeLocator.m in Sources */,
+				E3359E47167451C500334177 /* ImageFileProcessor.mm in Sources */,
+				E3359E48167451C900334177 /* ImageProcessor.m in Sources */,
+				E3359E49167451CD00334177 /* SplitImageArray.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3AA40DD1436637700EADF06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3AA40F11436637700EADF06 /* Browse_ImagesTests.m in Sources */,
+				E3359D721673C1B900334177 /* CodeLocator.m in Sources */,
+				E3359D731673C1B900334177 /* ImageFileProcessor.mm in Sources */,
+				E3359D741673C1B900334177 /* ImageProcessor.m in Sources */,
+				E3359D751673C1B900334177 /* SplitImageArray.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3AA40E71436637700EADF06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3AA40BD1436637700EADF06 /* Paginator */;
+			targetProxy = E3AA40E61436637700EADF06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3AA40CB1436637700EADF06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3AA40CC1436637700EADF06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E3AA40D11436637700EADF06 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3AA40D21436637700EADF06 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E3AA40D71436637700EADF06 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3AA40D81436637700EADF06 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E3AA40EB1436637700EADF06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3AA40EC1436637700EADF06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3AA40F21436637700EADF06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
+			};
+			name = Debug;
+		};
+		E3AA40F31436637700EADF06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
+			};
+			name = Release;
+		};
+		E3AA40F51436637700EADF06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "Browse Images/Paginator-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "Browse Images/Paginator-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads/OpenCV-2.4.3/build/lib\"",
+					"\"$(SRCROOT)/../../../Downloads/OpenCV-2.4.3/build/3rdparty/lib\"",
+					"\"$(SRCROOT)/../ZXingObjC/OS X Framework 12-8-12 11.13 AM/usr/local/lib\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = Paginator;
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E3AA40F61436637700EADF06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "Browse Images/Paginator-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "Browse Images/Paginator-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads/OpenCV-2.4.3/build/lib\"",
+					"\"$(SRCROOT)/../../../Downloads/OpenCV-2.4.3/build/3rdparty/lib\"",
+					"\"$(SRCROOT)/../ZXingObjC/OS X Framework 12-8-12 11.13 AM/usr/local/lib\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = Paginator;
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E3AA40F81436637700EADF06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Browse Images.app/Contents/MacOS/Browse Images";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Browse Images/Paginator-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "Browse ImagesTests/PaginatorTests-Info.plist";
+				PRODUCT_NAME = PaginatorTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E3AA40F91436637700EADF06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Browse Images.app/Contents/MacOS/Browse Images";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Browse Images/Paginator-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "Browse ImagesTests/PaginatorTests-Info.plist";
+				PRODUCT_NAME = PaginatorTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3AA40B81436637600EADF06 /* Build configuration list for PBXProject "Paginator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3AA40F21436637700EADF06 /* Debug */,
+				E3AA40F31436637700EADF06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3AA40F41436637700EADF06 /* Build configuration list for PBXNativeTarget "Paginator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3AA40F51436637700EADF06 /* Debug */,
+				E3AA40F61436637700EADF06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3AA40F71436637700EADF06 /* Build configuration list for PBXNativeTarget "PaginatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3AA40F81436637700EADF06 /* Debug */,
+				E3AA40F91436637700EADF06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E3AA40DA1436637700EADF06 /* Browse_Images.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E3AA40DB1436637700EADF06 /* Browse_Images.xcdatamodel */,
+			);
+			currentVersion = E3AA40DB1436637700EADF06 /* Browse_Images.xcdatamodel */;
+			path = Browse_Images.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E3AA40B51436637600EADF06 /* Project object */;
+}
