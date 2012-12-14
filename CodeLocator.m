@@ -34,23 +34,21 @@
     // possible formats, allowed lengths, and the string encoding.
     ZXDecodeHints* hints = [ZXDecodeHints hints];
     [hints addPossibleFormat:kBarcodeFormatQRCode];
-    [hints setTryHarder:YES];
+    
     
     ZXMultiFormatReader* reader = [ZXMultiFormatReader reader];
-    ZXResult* result = [reader decode:bitmap
-                                hints:hints
-                                error:&error];
+    ZXResult* result = [reader decode:bitmap hints:hints error:&error];
     if (!result) {
         //If we don't find a QR Code we try really hard to find one.
-        for (int i = 0; i < 20; i++) {
+            NSLog(@"We have had to try harder to find the QR Code.");
+            [hints setTryHarder:YES];
             result = [reader decode:bitmap hints:hints error:&error];
-        }
         if (!result) {
             //Let's throw a popup up here and perhaps process the page using the last known parameters
             NSLog(@"Failed to find code.");
+            NSLog(@"%@", [error localizedDescription]);
         }
     }
-    
     return [self calculateResult:result xOffset:x yOffset:y leftPage:[self isLeftPage:result.text]];
 }
 

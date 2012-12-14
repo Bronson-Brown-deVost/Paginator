@@ -17,6 +17,7 @@
     {
         // Initialization code here
         calibrationPoints = [[NSMutableDictionary alloc] init];
+        lockThread = [[NSLock alloc] init];
         dpiValues = [[NSMutableArray alloc] init];
     }
     return self;
@@ -75,8 +76,10 @@
     NSArray *results;
     CodeLocator *findCode = [[CodeLocator alloc] init];
     results = [findCode locateCode:[[argArray objectAtIndex:0] CGImageForProposedRect:NULL context:NULL hints:NULL] xOffset:(int)[[argArray objectAtIndex:1] integerValue] yOffset:(int)[[argArray objectAtIndex:2] integerValue]];
+    [lockThread lock];
     [calibrationPoints setObject:[results objectAtIndex:1] forKey:[results objectAtIndex:0]];
     [dpiValues addObject:[results objectAtIndex:2]];
+    [lockThread unlock];
 }
 
 @end

@@ -10,6 +10,7 @@
 
 @interface ImageProcessor : NSObject {
     NSMutableDictionary *calibrationPoints;
+    NSLock *lockThread;
     NSMutableArray *dpiValues;
 }
 

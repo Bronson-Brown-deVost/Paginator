@@ -10,6 +10,13 @@
 
 @interface ImageFileProcessor : NSObject
 
-- (NSImage*)process:(NSImage*)initialImage atDPI:(int)targetDPI withColorOption:(NSString*)colorOption;
+- (NSImage*)process:(NSImage*)initialImage atDPI:(int)targetDPI withColorOption:(NSString*)colorOption reducedBy:(float)reductionFactor;
 
 @end
+
+/*
+//This is for Diagnostic use only!!!
+@interface NSImage (FileWriter)
+- (void) saveAsImageType: (NSBitmapImageFileType)imageType atPath:(NSString *)filePath;
+@end
+*/

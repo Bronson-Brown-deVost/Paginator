@@ -14,13 +14,54 @@
 
 @implementation ImageFileProcessor
 
-- (NSImage*)process:(NSImage*)initialImage atDPI:(int)targetDPI withColorOption:(NSString*)colorOption
+- (NSImage*)process:(NSImage*)initialImage atDPI:(int)targetDPI withColorOption:(NSString*)colorOption reducedBy:(float)reductionFactor
 {
+    //Timer function
+    NSDate *start = [NSDate date];
+    //Timer function
+    
+    NSImage* reducedImageForQRCode = [self resizeImage:initialImage reduceBy:reductionFactor];
+    
+    //Timer function
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:start];
+    NSLog(@"Time to run image resizing: %f", executionTime);
+    //Timer function
+    
+    /*
+    //Write file for diagnostic purposes
+    [reducedImageForQRCode saveAsImageType:NSTIFFFileType atPath:@"/Volumes/Leopard/Users/bronson/Desktop/test.tif"];
+     */
+    
+    //Timer function
+    start = [NSDate date];
+    //Timer function
+    
     SplitImageArray *imageSplitter = [[SplitImageArray alloc] init];
-    NSDictionary *splitImageDict = [imageSplitter imageSplitIntoArray:initialImage];
+    NSDictionary *splitImageDict = [imageSplitter imageSplitIntoArray:reducedImageForQRCode];
+    
+    //Timer function
+    methodFinish = [NSDate date];
+    executionTime = [methodFinish timeIntervalSinceDate:start];
+    NSLog(@"Time to run split image: %f", executionTime);
+    //Timer function
+    
+    //Timer function
+    start = [NSDate date];
+    //Timer function
     
     ImageProcessor *processImage = [[ImageProcessor alloc] init];
     NSDictionary *dictData = [processImage processImageDictionary:splitImageDict];
+    
+    //Timer function
+    methodFinish = [NSDate date];
+    executionTime = [methodFinish timeIntervalSinceDate:start];
+    NSLog(@"Time to run process image: %f", executionTime);
+    //Timer function
+    
+    //Timer function
+    start = [NSDate date];
+    //Timer function
     
     NSString *page;
     for (NSString *key in dictData) {
@@ -49,10 +90,60 @@
         topRight = [[dictData objectForKey:@"right page top right"] pointValue];
     }
     
+    //Now we must scale the points up for the full size image.
+    //Perhaps we can find a more elegant way of doing this later.
+    topLeft.x *= reductionFactor;
+    topLeft.y *= reductionFactor;
+    topRight.x *= reductionFactor;
+    topRight.y *= reductionFactor;
+    bottomRight.x *= reductionFactor;
+    bottomRight.y *= reductionFactor;
+    bottomLeft.x *= reductionFactor;
+    bottomLeft.y *= reductionFactor;
+    
+    //Collect the DPI data
     float dpi = [[dictData objectForKey:@"DPI"] floatValue];
     
+    /* We could try processing the image with Core Image
+    NSData  * tiffData = [initialImage TIFFRepresentation];
+    CIImage *backgroundCIImage = [[CIImage alloc] initWithData:tiffData];
+    CGRect cgRect = [backgroundCIImage extent];
+    NSRect nsRect = NSMakeRect(cgRect.origin.x,\
+                               cgRect.origin.y, cgRect.size.width, cgRect.size.height);
+    
+    if ([initialImage isFlipped]) {
+        CGAffineTransform transform;
+        transform = CGAffineTransformMakeTranslation(0.0,cgRect.size.height);
+        transform = CGAffineTransformScale(transform, 1.0, -1.0);
+        backgroundCIImage = [backgroundCIImage imageByApplyingTransform:transform];
+    }
+    
+    [backgroundCIImage drawAtPoint:NSZeroPoint fromRect:nsRect
+               operation:NSCompositeSourceOver fraction:1.0];
+    CIFilter* filter = [CIFilter filterWithName: @"CIPerspectiveTransform"];
+    [filter setDefaults];
+    [filter setValue: backgroundCIImage forKey: @"inputImage"];
+    
+    CIVector* tRight = [CIVector vectorWithX: topRight.x Y: topLeft.x];
+    CIVector* tLeft = [CIVector vectorWithX: topLeft.x Y: topLeft.y];
+    CIVector* bRight = [CIVector vectorWithX: bottomRight.x Y: bottomRight.y];
+    CIVector* bLeft = [CIVector vectorWithX: bottomLeft.x Y: bottomLeft.y];
+    
+    [filter setValue: tLeft forKey: @"inputTopLeft"];
+    [filter setValue: tRight forKey: @"inputTopRight"];
+    [filter setValue: bRight forKey: @"inputBottomRight"];
+    [filter setValue: bLeft forKey: @"inputBottomLeft"];
+    
+    CIImage* deskewedImage = [filter valueForKey: @"outputImage"];
+    NSImage *newImage = [self imageWithCIImage:deskewedImage fromRect:[deskewedImage extent]];*/
+                       
+                       
+    
     cv::Mat original = [self cvMatFromNSImage:initialImage];
+    
+    
     //Calculate proper width and height
+    //Not sure why this doesn't work for landscape images
     CGFloat w1 = sqrt( pow(bottomRight.x - bottomLeft.x , 2) + pow(bottomRight.x - bottomLeft.x, 2));
     CGFloat w2 = sqrt( pow(topRight.x - topLeft.x , 2) + pow(topRight.x - topLeft.x, 2));
      
@@ -101,9 +192,15 @@
     }
     //cv::norm(undistorted, undistorted);
     
-    
     //Write and return NSImage
     NSImage *newImage = [self NSImageFromCVMat:undistorted];
+    
+    //Timer function
+    methodFinish = [NSDate date];
+    executionTime = [methodFinish timeIntervalSinceDate:start];
+    NSLog(@"Time to run image transform: %f", executionTime);
+    //Timer function
+    
     return newImage;
 }
 
@@ -167,4 +264,60 @@
     return cvMat;
 }
 
+-(NSImage*)resizeImage:(NSImage*)initialImage reduceBy:(float)reductionFactor
+{
+    NSImage *sourceImage = [initialImage copy];
+    float width = [sourceImage size].width/reductionFactor;
+    float height = [sourceImage size].height/reductionFactor;
+    // Report an error if the source isn't a valid image
+    if (![sourceImage isValid])
+    {
+        NSLog(@"Invalid Image");
+    } else {
+        NSImage *smallImage = [[NSImage alloc] initWithSize:NSMakeSize(width, height)];
+        [smallImage lockFocus];
+        [sourceImage setSize:NSMakeSize(width, height)];
+        [[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationHigh];
+        //[sourceImage compositeToPoint:NSZeroPoint operation:NSCompositeCopy];
+        [sourceImage drawAtPoint:NSZeroPoint fromRect:NSMakeRect(0,0, [smallImage size].width, [smallImage size].height) operation:NSCompositeCopy fraction:1.0];
+        [smallImage unlockFocus];
+        return smallImage;
+    }
+    return nil;
+}
+
+/* This would be useful fore Core Image processing
+- (NSImage *)imageWithCIImage:(CIImage *)i fromRect:(CGRect)r
+    {
+        NSImage *image;
+        NSCIImageRep *ir;
+        
+        ir = [NSCIImageRep imageRepWithCIImage:i];
+        image = [[NSImage alloc] initWithSize:
+                  NSMakeSize(r.size.width, r.size.height)];
+        [image addRepresentation:ir];
+        return image;
+    }
+ 
+ - (CIImage *)newCIImage
+ {
+ return [[CIImage alloc] initWithBitmapImageRep:[NSBitmapImageRep imageRepWithData:[self TIFFRepresentation]]];
+ }*/
+
 @end
+
+/*
+//This is for Diagnostic use only!!!
+# pragma mark - NSImage Interface
+//This is a handy way to save NSImages to disk.
+@implementation NSImage (FileWriter)
+
+- (void) saveAsImageType: (NSBitmapImageFileType)imageType atPath:(NSString *)filePath
+{
+    NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithData:[self TIFFRepresentation]];
+    
+    NSData *data = [rep representationUsingType: imageType properties: nil];
+    [data writeToFile: filePath atomically: NO];
+}
+@end
+ */

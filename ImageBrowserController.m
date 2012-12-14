@@ -410,34 +410,57 @@
 
 -(void)processImage:(NSArray*) argArray
 {
+    //Timer function
+    NSDate *start = [NSDate date];
+    //Timer function
+    
     MyImageObject *selectedImage = [argArray objectAtIndex:0];
     NSImage *currentImage = [[NSImage alloc] initWithContentsOfFile:[selectedImage imageUID]];
     int index = (int)[[argArray objectAtIndex:1] integerValue];
     NSString *colorOption = [argArray objectAtIndex:2];
     ImageFileProcessor *fileProcessor = [[ImageFileProcessor alloc] init];
-    currentImage = [fileProcessor process:currentImage atDPI:dpi withColorOption:colorOption];
+    
+    //I am currently hardcoding the reduction factor (ZXing won't detect the QR Code if the image is too big.
+    //Perhaps we can make this more intelligent later.
+    currentImage = [fileProcessor process:currentImage atDPI:dpi withColorOption:colorOption reducedBy:3];
     [self writeFileFromImage:currentImage atIndex:index];
     [progressIndicator incrementBy:1];
     
     //Shut down progress indication when finished.
     if ([progressIndicator maxValue] == [progressIndicator doubleValue]) {
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert addButtonWithTitle:@"OK"];
-        [alert setMessageText:@"Your images have been processed."];
-        [alert setInformativeText:[NSString stringWithFormat:@"They have been saved in the folder: %@.", outputDirectory]];
-        [alert setAlertStyle:NSWarningAlertStyle];
-        [alert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:nil contextInfo:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert addButtonWithTitle:@"OK"];
+            [alert setMessageText:@"Your images have been processed."];
+            [alert setInformativeText:[NSString stringWithFormat:@"They have been saved in the folder: %@.", outputDirectory]];
+            [alert setAlertStyle:NSWarningAlertStyle];
+            [alert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:nil contextInfo:nil];
+        });
         [processingLabel setHidden:YES];
         [progressSpinner stopAnimation:self];
         [progressIndicator stopAnimation:self];
         [progressIndicator setHidden:YES];
     }
+    
+    //Timer function
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:start];
+    NSLog(@"Time to fully process and write 1 image: %f", executionTime);
+    //Timer function
 }
 
 -(void)writeFileFromImage:(NSImage*)processedImage atIndex:(int)index
 {
+    //Timer function
+    NSDate *start = [NSDate date];
+    //Timer function
     NSString *writeFileName = [self.outputDirectory stringByAppendingString:[NSString stringWithFormat:@"/%05d.tiff", index]];
-    [processedImage saveAsImageType:NSTIFFFileType withDPI:dpi atPath:writeFileName];
+    [processedImage saveAsImageType:NSTIFFCompressionLZW withDPI:dpi atPath:writeFileName];
+    //Timer function
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:start];
+    NSLog(@"Time to write file to disk: %f", executionTime);
+    //Timer function
 }
 
 - (IBAction)printQRCodes:(id)sender
